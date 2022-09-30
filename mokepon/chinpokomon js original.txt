@@ -1,0 +1,211 @@
+let ataqueJugador 
+let ataqueEnemigo
+let vidasJugador = 3
+let vidasEnemigo = 3
+
+function iniciarJuego() {
+    let sectionReiniciar = document.getElementById("reiniciar")
+    sectionReiniciar.style.display = 'none'
+   
+    let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
+     sectionSeleccionarAtaque.style.display = 'none'
+
+    let botonMascotaJugador = document.getElementById("boton-mascota") 
+     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
+ //EVENTO QUE OCURRIRÁ AL PRESIONAR EL BOTÓN DE SELECCIONAR MASCOTA 
+
+    let botonFuego = document.getElementById("seleccionar-ataque-fuego")
+       botonFuego.addEventListener('click', ataqueFuego)
+    
+    let botonAgua = document.getElementById("seleccionar-ataque-agua")
+      botonAgua.addEventListener('click', ataqueAgua)
+
+     let botonAire = document.getElementById("seleccionar-ataque-tierra")
+     botonAire.addEventListener('click', ataqueTierra)
+
+     let botonReiniciar = document.getElementById("reiniciar")
+     botonReiniciar.addEventListener('click', reiniciarJuego) 
+}
+function seleccionarMascotaJugador() {
+    let sectionSeleccionarMascota = document.getElementById("seleccionar-mascota")
+     sectionSeleccionarMascota.style.display = 'none'
+
+    let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
+     sectionSeleccionarAtaque.style.display = 'flex'
+
+    let spanMascotaJugador = document.getElementById("mascota-jugador") 
+
+
+    if(document.getElementById("Carnerotrón").checked) {
+        spanMascotaJugador.innerHTML = 'Carnerotrón'
+
+        //alert('SELECCIONASTE A Carnerotrón')
+
+    } else if(document.getElementById("Zapato").checked) {
+        spanMascotaJugador.innerHTML = 'Zapato'
+        //alert('SELECCIONASTE A ZAPATO')
+
+    } else if(document.getElementById("Pinguino").checked) {
+        spanMascotaJugador.innerHTML = 'Pinguino'
+        //alert('SELECCIONASTE A PINGUINO')
+
+    } else if(document.getElementById("Furrycat").checked) {
+        spanMascotaJugador.innerHTML = 'Furrycat'
+        //alert('SELECCIONASTE A FURRYCAT')
+
+    } else if(document.getElementById("Vamporko").checked) {
+        spanMascotaJugador.innerHTML = 'Vamporko'
+        //alert('SELECCIONASTE A VAMPORKO')
+
+    } else if(document.getElementById("Brocorii").checked) {
+        spanMascotaJugador.innerHTML = 'Brocorii'
+        //alert('SELECCIONASTE A BROCORII')
+
+    } else {
+        alert('SELECCIONA UNA MASCOTA')
+
+    } 
+    seleccionarMascotaEnemigo()      
+}
+
+function seleccionarMascotaEnemigo() {
+    let mascotaAleatorio = aleatorio (1, 6)
+    let spanMascotaEnemigo = document.getElementById("mascota-enemigo") 
+
+    if(mascotaAleatorio == 1) {
+        spanMascotaEnemigo.innerHTML = 'Carnerotrón'
+        //Hipodoge
+    } else if(mascotaAleatorio == 2) {
+        spanMascotaEnemigo.innerHTML = 'Zapato'
+        //Capipepo
+    }  else if(mascotaAleatorio == 3) {
+        spanMascotaEnemigo.innerHTML = 'Pinguino'
+        //Ratigueya   
+    } else if(mascotaAleatorio == 4) {
+        spanMascotaEnemigo.innerHTML = 'Furrycat'
+        //Langostelvis   
+    } else if(mascotaAleatorio == 5) {
+        spanMascotaEnemigo.innerHTML = 'Vamporko'
+        //Tucapalma   
+    } else if(mascotaAleatorio == 6) {
+        spanMascotaEnemigo.innerHTML = 'Brocorii'
+        //Pydos
+    } 
+
+}
+
+function ataqueFuego() {
+    ataqueJugador = 'FUEGO' 
+    ataqueAleatorioEnemigo()
+}
+
+function ataqueAgua() {
+    ataqueJugador = 'AGUA'
+    ataqueAleatorioEnemigo()
+}
+
+function ataqueTierra() {
+    ataqueJugador = 'TIERRA' 
+    ataqueAleatorioEnemigo()
+}
+
+function ataqueAleatorioEnemigo() {
+    let ataqueAleatorioEnemigo = aleatorio(1, 3)
+
+    if(ataqueAleatorioEnemigo == 1){
+        ataqueEnemigo ='FUEGO' 
+    } else if(ataqueAleatorioEnemigo == 2){
+        ataqueEnemigo ='AGUA' 
+    } else if (ataqueAleatorioEnemigo == 3){
+        ataqueEnemigo ='TIERRA' 
+    }
+
+  combate()
+}
+
+function combate() {
+
+    let spanVidasJugador = document.getElementById("vidas-jugador")
+    let spanVidasEnemigo = document.getElementById("vidas-enemigo")
+
+    if(ataqueJugador == ataqueEnemigo) {
+        crearMensaje("EMPATE")
+    } else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA' || ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO' || ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA') {
+        crearMensaje("GANAS")
+        vidasEnemigo --
+        spanVidasEnemigo.innerHTML = vidasEnemigo      
+    }  else {
+    crearMensaje("PERDISTE")
+    vidasJugador -- 
+    spanVidasJugador.innerHTML = vidasJugador
+    
+    }
+
+    revisarVidas()
+   
+}
+
+function revisarVidas() {
+    if (vidasEnemigo == 0) {
+        crearMensajeFinal("FELCIDADES! HAS GANADO EL COMBATE CHINPOKOMON HAS VENCIDO EL PODER MALIGNO")
+    } else if(vidasJugador == 0) {
+        crearMensajeFinal("LO SIENTO HAS PERDIDO")
+    } 
+}
+
+function crearMensaje(resultado) {
+
+let sectionMensajes = document.getElementById("resultado")
+let ataquesDelJugador = document.getElementById("ataques-del-jugador")
+let ataquesDelEnemigo = document.getElementById("ataques-del-enemigo")
+
+
+let nuevoAtaqueDelJugador = document.createElement('p')
+let nuevoAtaqueDelEnemigo = document.createElement('p')
+
+sectionMensajes.innerHTML = resultado
+nuevoAtaqueDelJugador.innerHTML = ataqueJugador 
+nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
+
+
+ataquesDelJugador.appendChild(nuevoAtaqueDelJugador)
+ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo)
+
+}
+
+function crearMensajeFinal(resultadoFinal) {
+
+    let sectionReiniciar = document.getElementById("reiniciar")
+    sectionReiniciar.style.display = 'block'
+
+    let sectionMensajes = document.getElementById("mensajes")
+    
+    
+    sectionMensajes.innerHTML = resultadoFinal
+    
+    
+
+    let botonFuego = document.getElementById("seleccionar-ataque-fuego")
+     botonFuego.disabled = true
+    
+     let botonAgua = document.getElementById("seleccionar-ataque-agua")
+     botonAgua.disabled = true
+     let botonAire = document.getElementById("seleccionar-ataque-tierra")
+     botonAire.disabled = true
+    } 
+
+
+function reiniciarJuego() {
+      location.reload()
+}
+
+function aleatorio(Min, Max) {
+    return Math.floor(Math.random() * (Max - Min + 1) + Min)
+   }
+
+
+
+   
+window.addEventListener("load", iniciarJuego) //EVENTO UE OCURRIRÁ AL INCICAR EL DOCUMENTO HTML   
+
+

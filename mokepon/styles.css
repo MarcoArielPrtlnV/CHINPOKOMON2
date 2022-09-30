@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+
+    
+}
+
+.background {
+    background-image: url(./assets/parada.png);
+    background-repeat: no-repeat;
+     background-size: cover;
+}
+
+.titulo {
+    color: black;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    font-size: 45px;
+    display: flex;
+    align-content: center;
+    flex-direction: row;
+    margin-top: 31px;
+    
+}
+
+.titulo img {
+    width: 199px;
+    margin-top: -45px;
+
+}
+
+.subtitulo {
+
+    font-size: 15px;
+    margin: 72px 3px 54px 15px;
+    display: flex;
+    align-content: center;
+    flex-wrap: nowrap;
+    flex-direction: row-reverse;
+
+}
+
+.subtitulo img {
+
+    width: 54px;
+    height: 120px;
+}
+
+#seleccionar-mascota {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.tarjetas, tarjetas-ataques-elementos {
+
+    display: flex ;
+    gap: 10px;
+}
+
+.tarjeta-de-mokepon {
+
+    width: 241px;
+    height: 111px;
+    background: #B3B6B7;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 10px;
+    border: 1px solid;
+    font-size: 9px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: transparent;
+    
+    
+}
+
+.tarjeta-de-mokepon:active {
+
+    box-shadow: 0 0 0 #9a1604, inset 0 0 5px rgba(0, 0, 0, 0.4);
+
+}
+
+.tarjeta-de-mokepon img {
+
+    width: 85px;
+   
+}
+
+input {
+    display: none;
+
+}
+
+input:checked + label {
+
+    background: #eb94d0;
+    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -moz-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -ms-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: -o-linear-gradient(top, #2079b0, #eb94d0);
+    background-image: linear-gradient(to bottom, #2079b0, #eb94d0);
+    box-shadow: 0px 5px 0 #207;
+
+    text-decoration: none;
+    background-color: #411530;
+}
+
+#boton-mascota {
+
+    width: 179px;
+    height: 57px;
+    background: crimson;
+    background-image: -webkit-linear-gradient(top, red, #eb94d0);
+    background-image: -moz-linear-gradient(top, red, #eb94d0);
+    background-image: -ms-linear-gradient(top, red, #eb94d0);
+    background-image: -o-linear-gradient(top, red, #eb94d0);
+    background-image: linear-gradient(to bottom, red, #eb94d0);
+    box-shadow: 0px 5px 0 #8F1502;
+    text-decoration: none;
+    background-color: #411530;
+    padding: 1px;
+    box-sizing: border-box;
+    margin: 69px 0px 0px 0px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    border-color: transparent;
+    
+}
+
+.seleccion:active {
+    box-shadow: 0 0 0 #9a1604, inset 0 0 5px rgba(0, 0, 0, 0.4);
+
+}
+
+
+
+
+#seleccionar-ataque {
+    
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    
+}
+
+
+
+.boton-de-ataque {
+    width: 182px;
+    height: 96px;
+    background: crimson;
+    background-image: -webkit-linear-gradient(top, crimson, red);
+    background-image: -moz-linear-gradient(top, crimson, red);
+    background-image: -ms-linear-gradient(top, crimson, red);
+    background-image: -o-linear-gradient(top, crimson, red);
+    background-image: linear-gradient(to bottom, crimson, red);
+    box-shadow: 0px 5px 0 crimson;
+
+    text-decoration: none;
+    background-color: #411530;
+    padding: 1px;
+    box-sizing: border-box;
+    margin: 69px 0px 0px 0px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    border-color: transparent;
+    
+
+    
+}
+
+.boton-de-ataque:active {
+
+   box-shadow: 0 0 0 #9a1604, inset 0 0 5px rgba(0, 0, 0, 0.4);
+}
+
+.boton-de-ataque img {
+    width: 48px;
+}
+
+#mensajes {
+
+    width: 471px;
+    background: firebrick;
+    padding: 15px;
+    margin-top: 48px;
+    margin-block: 50px;
+    border-radius: 20px;
+    box-shadow: 0 0 0 #5a0f05, inset 0 0 5px rgba(126, 56, 56, 0.4)
+}
+
+#reiniciar {
+    width: 182px;
+    height: 96px;
+    background: crimson;
+    background-image: linear-gradient(to bottom, crimson, red);
+    box-shadow: 0px 5px 0 crimson;
+
+    text-decoration: none;
+    background-color: #411530;
+    padding: 1px;
+    box-sizing: border-box;
+    margin: 69px 0px 0px 0px;
+    border: 1px solid black;
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    border-color: transparent;
+    
+    
+}
+
+
+.reinicio-juego:active{
+
+    box-shadow: 0 0 0 #9a1604, inset 0 0 5px rgba(0, 0, 0, 0.4);  
+}
+
+#Reiniciar {
+    display: flex;
+    justify-content: center;
+}
+
+.ataques {
+
+    display: grid;
+    grid-template-columns: 220px 220px;
+    background-color: transparent;
+    border-radius: 20px;
+}
+
+.ataques-jugador, .ataques-enemigo {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+@media (max-width: 360px) {
+
+    .tarjetas, .tarjetas-ataques-elemento {
+      flex-direction: column;
+    }
+
+
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html class="background">
+    
+    <head> 
+        <meta charset= "utf-8" /> 
+        <title> MOKEPON </title>
+        <link rel="stylesheet" href="./styles.css">
+        
+    </head> 
+    <body>   
+        <section id="seleccionar-mascota">
+            <h1 class = "titulo"> Chinpokomon!
+                <p></p>
+                <img src="./assets/south park.png" alt="South park">  
+            </h1>
+
+            <h2 class="subtitulo">Elige  a tú mascota y así podrás vencer el poder maligno!
+                <p></p>
+                <img src="./assets/Ash_Ketchum.png" alt="Ash"> 
+            </h2>
+
+            <div class="tarjetas">
+
+            <input type= "radio" name="mascota" id="Carnerotrón"/> 
+            <label class="tarjeta-de-mokepon" for="Carnerotrón">Carnerotrón
+                <p></p>
+                <img src="./assets/carnerotron.png" alt="Carnerotrón">
+            </label> <br>
+
+            <input type= "radio" name="mascota" id="Zapato"/> 
+            <label class="tarjeta-de-mokepon" for="Zapato">Zapato
+                <p></p>
+                <img src="./assets/zapato.png" alt="Zapato">
+            </label> <br>
+
+            <input type= "radio" name="mascota" id="Pinguino"/> 
+            <label class="tarjeta-de-mokepon" for="Pinguino">Pinguino
+                <p></p>
+                <img src="./assets/pinguino.png" alt="Pinguino">
+            </label> <br>
+
+            <input type= "radio" name="mascota" id="Furrycat"/> 
+            <label class="tarjeta-de-mokepon" for="Furrycat">Furrycat
+                <p></p>
+                <img src="./assets/furrycat.png" alt="Furrycat">
+            </label> <br>
+
+            <input type= "radio" name="mascota" id="Vamporko"/> 
+            <label class="tarjeta-de-mokepon" for="Vamporko">Vamporko
+                <p></p>
+                <img src="./assets/vamporko.png" alt="Vamporko">
+            </label> <br>
+
+           <input type= "radio" name="mascota" id="Brocorii"/> 
+            <label class="tarjeta-de-mokepon" for="Brocorii">Brocorii
+                <p></p>
+                <img src="./assets/brocorii.png" alt="Brocorii">
+
+
+            </label> <br>
+        
+            </div>
+           
+            <button id="boton-mascota" class="seleccion">seleccionar</button>
+
+        </section>
+
+        <section id="seleccionar-ataque">
+            <h1 class = "titulo"> Chinpokomon!
+                <p></p>
+                <img src="./assets/south park.png" alt="South park">
+             </h1>
+           <h2>Elige tú ataque para obtener la corona real Chinpoko!:</h2>
+
+           <div class="tarjetas-ataques-elementos">
+            <button id="seleccionar-ataque-fuego" class="boton-de-ataque">Fuego
+                <p></p>
+                <img src="./assets/fuego.png" alt="Fuego">
+            </button>
+            <button id="seleccionar-ataque-agua" class="boton-de-ataque">Agua
+                <p></p>
+                <img src="./assets/agua.png" alt="Agua">
+            </button>
+            <button id="seleccionar-ataque-tierra" class="boton-de-ataque">Tierra
+                <p></p>
+                <img src="./assets/tierra.png" alt="Tierra">
+            </button>
+           </div>
+
+           <div>
+
+           <div id="mensajes">
+                <p id="resultado">Comiencen!</p> 
+           </div>  
+
+           <section id="Reiniciar">
+            <button id="reiniciar" class="reinicio-juego">Reiniciar</button>
+        </section> 
+        
+     </div>
+           
+        <div class="ataques">
+        <div class="ataques-jugador">
+            <p id="vidas-jugador">3</p>
+            <p id="mascota-jugador"></p>
+            <div id="ataques-del-jugador"></div>
+        </div>
+
+        <div class="ataques-enemigo">
+            <p id="vidas-enemigo">3</p>
+            <p id="mascota-enemigo"></p>
+            <div id="ataques-del-enemigo"></div>
+          </div>
+        </div>            
+      </section>
+    <script src="./js/mokepon.js"></script>
+  </body>
+</html>
